@@ -17,25 +17,33 @@ public class Practica1Github {
     public static void main(String[] args) {
         // TODO code application logic here
         Scanner sc=new Scanner(System.in);
-        
-        String cadena ,caracter;
-        
-        System.out.println("Escriba la cadena");
-        cadena=sc.nextLine();
-        
-        do{
-        
-            System.out.println("Escriba letra");
-            caracter=sc.nextLine();
+        boolean seguir;
+     do{    
+            String cadena ,caracter;
+
+            System.out.println("Escriba la cadena");
+            cadena=sc.nextLine();
+
+
+            do{
+
+                System.out.println("Escriba letra");
+                caracter=sc.nextLine();
+
+                caracter=caracter.substring(0, 1);
+
+
+            }while(!Character.isLetter(caracter.charAt(0)));
+
+            proceso_contador(cadena,caracter);
             
-            caracter=caracter.substring(0, 1);
-            
-            
-        }while(!Character.isLetter(caracter.charAt(0)));
-        
-        proceso_contador(cadena,caracter);
-        
-    }
+        System.out.println("Desea repetir el proceso?¿");
+        seguir=sc.nextBoolean();
+
+        }while(seguir==true);
+     System.out.println("FIN DEL PROGRAMA");
+    
+}
     
     public static void proceso_contador(String cadena, String caracter){
         int cont=0;
