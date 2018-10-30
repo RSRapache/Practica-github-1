@@ -19,7 +19,6 @@ public class Practica1Github {
         Scanner sc=new Scanner(System.in);
         
         String cadena ,caracter;
-        int cont=0;
         
         System.out.println("Escriba la cadena");
         cadena=sc.nextLine();
@@ -34,6 +33,13 @@ public class Practica1Github {
             
         }while(!Character.isLetter(caracter.charAt(0)));
         
+        proceso_contador(cadena,caracter);
+        
+    }
+    
+    public static void proceso_contador(String cadena, String caracter){
+        int cont=0;
+        
         for(int i=0;i<cadena.length();i++){
             
             if(caracter.equalsIgnoreCase(cadena.substring(i, i+1)))
@@ -42,5 +48,4 @@ public class Practica1Github {
         
         System.out.println(cont+" veces que sale la letra "+caracter+" en la cadena "+cadena);
     }
-    
 }
